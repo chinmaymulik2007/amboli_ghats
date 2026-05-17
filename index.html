@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Amboli Ghats | Mystic Mountain Retreat & Eco Tourism</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f5f7f2;
+            color: #1a2a1f;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, .logo {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* header / navigation */
+        header {
+            background: rgba(18, 35, 20, 0.92);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            transition: 0.3s;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        .logo a {
+            text-decoration: none;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #d9e68c;
+            letter-spacing: -0.5px;
+        }
+        .logo span {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: #cbdba7;
+            display: inline-block;
+            margin-left: 8px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #eff3e3;
+            transition: 0.2s;
+            font-size: 1rem;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: #e1f096;
+            border-bottom: 2px solid #bdd45a;
+            padding-bottom: 4px;
+        }
+
+        /* hero section */
+        .hero {
+            background: linear-gradient(115deg, #1a3620 0%, #2b512c 100%);
+            padding: 70px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://i.pinimg.com/736x/5d/f2/d6/5df2d6baea75051d9fb161d0a8bd4462.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 48px;
+            position: relative;
+            z-index: 2;
+        }
+        .hero-content {
+            flex: 1.2;
+        }
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #ffffff;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #e2f0da;
+            max-width: 550px;
+            margin-bottom: 28px;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #bcd979;
+            color: #1f3b1a;
+            padding: 12px 32px;
+            border-radius: 60px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: 0.25s;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+        }
+        .btn:hover {
+            background-color: #cfec92;
+            transform: translateY(-3px);
+            box-shadow: 0 12px 20px rgba(0,0,0,0.15);
+        }
+        .hero-image {
+            flex: 0.9;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 25px 30px -12px rgba(0,0,0,0.3);
+        }
+        .hero-image img {
+            width: 100%;
+            display: block;
+            transition: transform 0.4s;
+        }
+        .hero-image img:hover {
+            transform: scale(1.02);
+        }
+
+        /* intro / quick features */
+        .features {
+            padding: 70px 0 50px;
+            background: #ffffff;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.4rem;
+            margin-bottom: 48px;
+            color: #1e3a1a;
+            position: relative;
+            font-weight: 700;
+        }
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #88b44e;
+            margin: 14px auto 0;
+            border-radius: 4px;
+        }
+        .cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        .card {
+            background: #fefef7;
+            border-radius: 30px;
+            padding: 30px 20px;
+            text-align: center;
+            flex: 1 1 220px;
+            box-shadow: 0 15px 30px -10px rgba(0,0,0,0.05);
+            transition: all 0.2s;
+            border: 1px solid #e1efcf;
+        }
+        .card .icon {
+            font-size: 2.8rem;
+            display: inline-block;
+            margin-bottom: 18px;
+        }
+        .card h3 {
+            font-size: 1.7rem;
+            color: #497c2c;
+            margin-bottom: 10px;
+        }
+        .card p {
+            color: #3a4d32;
+            font-size: 0.95rem;
+        }
+
+        /* about / why amboli */
+        .about-amboli {
+            padding: 70px 0;
+            background: #f1f7eb;
+        }
+        .two-col {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            align-items: center;
+        }
+        .about-text {
+            flex: 1;
+        }
+        .about-text h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            color: #2d5724;
+        }
+        .about-text p {
+            margin-bottom: 18px;
+            font-size: 1.05rem;
+            color: #2a3924;
+        }
+        .about-img {
+            flex: 1;
+            border-radius: 36px;
+            overflow: hidden;
+            box-shadow: 0 20px 28px -12px rgba(0,0,0,0.15);
+        }
+        .about-img img {
+            width: 100%;
+            display: block;
+        }
+
+        /* waterfalls & viewpoints */
+        .attractions {
+            padding: 70px 0;
+            background: white;
+        }
+        .grid-attractions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+        .att-card {
+            background: #fbfef5;
+            border-radius: 32px;
+            width: 300px;
+            overflow: hidden;
+            transition: 0.3s;
+            box-shadow: 0 12px 22px rgba(0,0,0,0.06);
+            border: 1px solid #ddeacd;
+        }
+        .att-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .att-card h4 {
+            padding: 20px 20px 6px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #336b25;
+        }
+        .att-card p {
+            padding: 0 20px 20px;
+            color: #45673a;
+            font-size: 0.9rem;
+        }
+
+        /* travel info + seasons */
+        .info-section {
+            background: #eef3e7;
+            padding: 70px 0;
+        }
+        .info-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 35px;
+            justify-content: space-between;
+        }
+        .info-card {
+            background: white;
+            border-radius: 30px;
+            padding: 28px 28px;
+            flex: 1 1 270px;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.04);
+            border: 1px solid #cfe2bc;
+        }
+        .info-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 18px;
+            color: #48852c;
+            font-weight: 700;
+        }
+        .info-card ul, .info-card p {
+            color: #2e4626;
+            line-height: 1.6;
+        }
+        .info-card li {
+            margin-left: 20px;
+            margin-bottom: 8px;
+        }
+
+        /* monsoon magic gallery */
+        .gallery {
+            padding: 70px 0;
+            background: #ffffff;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        .gallery-item {
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 14px 24px -10px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+            display: block;
+            transition: 0.4s;
+        }
+        .gallery-item img:hover {
+            transform: scale(1.03);
+        }
+
+        /* eco note */
+        .eco-note {
+            background: #dfecce;
+            border-radius: 40px;
+            padding: 20px 30px;
+            margin: 20px auto 0;
+            text-align: center;
+            max-width: 850px;
+        }
+        .eco-note p {
+            font-weight: 500;
+            color: #2c5222;
+        }
+
+        /* footer */
+        footer {
+            background: #142010;
+            color: #cce3bb;
+            padding: 50px 0 30px;
+        }
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 36px;
+            margin-bottom: 32px;
+        }
+        .footer-logo h3 {
+            font-size: 1.9rem;
+            color: #c4e095;
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 28px;
+            border-top: 1px solid #3e5932;
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 780px) {
+            .navbar {
+                flex-direction: column;
+            }
+            .hero-content h1 {
+                font-size: 2.4rem;
+            }
+            .section-title {
+                font-size: 1.9rem;
+            }
+            .container {
+                padding: 0 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <a href="#">Amboli Ghats<span>Western Ghats</span></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">The Ghats</a></li>
+                <li><a href="#attractions">Waterfalls & Views</a></li>
+                <li><a href="#info">Travel Guide</a></li>
+                <li><a href="#gallery">Monsoon Magic</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <h1>Amboli Ghats<br>Where clouds kiss the earth</h1>
+                    <p>Perched at 690m in the Sahyadris, Amboli is a lush, misty hill station — famous for roaring waterfalls, rare biodiversity, and breathtaking sunsets.</p>
+                    <a href="#info" class="btn">Explore the Mystic Ghat →</a>
+                </div>
+                <div class="hero-image">
+                    <img src="https://i.pinimg.com/originals/5e/9c/01/5e9c015f74a49c714cecb50377c08cbe.jpg" alt="Amboli Ghat scenic foggy valley">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- quick features -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Amboli?</h2>
+            <div class="cards">
+                <div class="card">
+                    <div class="icon">🌧️</div>
+                    <h3>Heavy Monsoon</h3>
+                    <p>One of wettest places in Maharashtra, lush green carpets & hundreds of waterfalls.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">🦋</div>
+                    <h3>Bio-Diversity</h3>
+                    <p>Home to rare butterflies, birds, and the famous ‘Amboli frog’ species.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">🏞️</div>
+                    <h3>Sunset Point</h3>
+                    <p>Uninterrupted views over the Konkan plains — magical evening hues.</p>
+                </div>
+                <div class="card">
+                    <div class="icon">💧</div>
+                    <h3>Majestic Falls</h3>
+                    <p>Shirgaonkar, Nangarta & other thundering cascades in full glory.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- about amboli ghats -->
+    <section id="about" class="about-amboli">
+        <div class="container">
+            <div class="two-col">
+                <div class="about-text">
+                    <h2>🏔️ The Crown of Konkan</h2>
+                    <p>Amboli Ghat is a serene hill station in the Sindhudurg district of Maharashtra, nestled in the Western Ghats — a UNESCO World Heritage Site. It is the last hill station before the coastal plains and receives rain almost year-round, creating a surreal misty landscape.</p>
+                    <p>The name "Amboli" derives from 'Amba' (mango) as the region is abundant with mango orchards. The ghat road itself is a winding adventure, with dense forests, 21 hairpin bends, and numerous viewpoints overlooking the lush valleys. During monsoon (June–September), the entire region transforms into a paradise of waterfalls, fog, and vibrant flora.</p>
+                    <p>Apart from nature, Amboli holds historical significance — the ancient Hiranyakeshi Temple (origin of the Hiranyakeshi river) and the nearby fort of Madhavgad tell tales of the Maratha empire. It remains an offbeat, peaceful escape from bustling city life.</p>
+                </div>
+                <div class="about-img">
+                    <img src="https://i.pinimg.com/originals/f4/3f/c6/f43fc63dc41ab8f5e3b1a856d0f18fa0.jpg" alt="Amboli dense forest and mist">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- attractions : waterfalls & points -->
+    <section id="attractions" class="attractions">
+        <div class="container">
+            <h2 class="section-title">💦 Waterfalls & Viewpoints</h2>
+            <div class="grid-attractions">
+                <div class="att-card">
+                    <img src="https://tse1.mm.bing.net/th/id/OIP.G6_fsGGuJjWKQO6x0OQNTgHaKw?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Shirgaonkar Waterfall Amboli">
+                    <h4>Shirgaonkar Falls</h4>
+                    <p>Majestic 200ft plunge, roaring during rains. A short trek through dense foliage leads to the base.</p>
+                </div>
+                <div class="att-card">
+                    <img src="https://eindiatourism.in/wp-content/uploads/2024/07/Amboli_ghat_sunset.jpg" alt="Sunset Point Amboli">
+                    <h4>Sunset Point</h4>
+                    <p>Classic Amboli view — watch the sun sink into the Arabian sea on clear days, orange clouds all around.</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Travel Info section -->
+    <section id="info" class="info-section">
+        <div class="container">
+            <h2 class="section-title">📍 Plan Your Journey</h2>
+            <div class="info-flex">
+                <div class="info-card">
+                    <h3>⛅ Best Season</h3>
+                    <ul>
+                        <li><strong>Monsoon (June–Sept):</strong> Lush, thunderous waterfalls, mist — ultimate romantic monsoon.</li>
+                        <li><strong>Winter (Oct–Feb):</strong> Pleasant, clear skies, great for trekking & sightseeing.</li>
+                        <li><strong>Summer (Mar–May):</strong> Pleasant but drier; still good for escapes.</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3>🚗 How to Reach</h3>
+                    <ul>
+                        <li><strong>Road:</strong> Well-connected from Kolhapur (65km), Sawantwadi (25km), Belgaum (70km). State transport buses & taxis available.</li>
+                        <li><strong>Rail:</strong> Nearest railhead – Sawantwadi Road (28km) or Kudal (45km).</li>
+                        <li><strong>Air:</strong> Nearest airports – Goa (Dabolim, 85km) or Belgaum (70km).</li>
+                        <li><strong>Self Drive:</strong> scenic ghat roads, cautious during heavy rain.</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3>🏡 Stay & Food</h3>
+                    <ul>
+                        <li>MTDC resort, private homestays, eco-lodges.</li>
+                        <li>Local Malvani cuisine, fresh seafood, spicy curries.</li>
+                        <li>Camping options near forest area (permit required).</li>
+                    </ul>
+                </div>
+                <div class="info-card">
+                    <h3>🎒 Tips</h3>
+                    <ul>
+                        <li>Carry raincoat & umbrella even in off-season.</li>
+                        <li>Check road conditions post heavy rains.</li>
+                        <li>Respect wildlife, avoid littering — pristine ghats.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- gallery : showcase monsoon magic and scenic ghats -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title">📷 Whispers of the Monsoon</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/originals/35/f2/cc/35f2ccdba825cf99907195869b5f3214.jpg" alt="Foggy road in Amboli ghat">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/736x/5d/f2/d6/5df2d6baea75051d9fb161d0a8bd4462.jpg" alt="Waterfall in full flow">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://eindiatourism.in/wp-content/uploads/2024/07/Amboli_ghat_sunset.jpg" alt="Sunset at Amboli point">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://i.pinimg.com/originals/f4/3f/c6/f43fc63dc41ab8f5e3b1a856d0f18fa0.jpg" alt="Deep valley lush greens">
+                </div>
+                
+                <div class="gallery-item">
+                    <img src="https://www.asianadventures.net/sites/default/files/cocoon/butterfly_at_amboli.png" alt="Rare butterfly species at Amboli">
+                </div>
+            </div>
+            <div class="eco-note">
+                <p>🌿 Amboli is part of the Western Ghats biodiversity hotspot — help preserve its fragile ecosystem. Avoid plastic, stay on trails, and respect local nature.</p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3>Amboli Ghats</h3>
+                <p>Mist • Waterfalls • Serenity</p>
+            </div>
+            <div>
+                <p><strong>Explore Nearby</strong></p>
+                <p>🏞️ Sawantwadi Palace | 🏖️ Tarkarli Beach | 🏯 Redi Fort</p>
+            </div>
+            <div>
+                <p><strong>Contact Eco Tourism</strong></p>
+                <p>📞 Forest Dept: +91 2363 123 456</p>
+                <p>📍 Amboli, Sindhudurg, MH - 416510</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p> Discover the jewel of Western Ghats | Sustainable travel</p>
+            <p style="margin-top: 8px;">🙏 Plan responsibly, embrace the rains, and leave only footprints.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // active nav highlight while scrolling
+    (function() {
+        const sections = document.querySelectorAll("section[id]");
+        const navLinks = document.querySelectorAll(".nav-links a");
+        function updateActiveNav() {
+            let current = "";
+            const scrollPos = window.scrollY + 130;
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if(scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    current = section.getAttribute("id");
+                }
+            });
+            navLinks.forEach(link => {
+                link.classList.remove("active");
+                const href = link.getAttribute("href").substring(1);
+                if(href === current) {
+                    link.classList.add("active");
+                }
+            });
+        }
+        window.addEventListener("scroll", updateActiveNav);
+        window.addEventListener("load", updateActiveNav);
+    })();
+</script>
+</body>
+</html>
